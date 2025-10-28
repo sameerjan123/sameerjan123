@@ -6,50 +6,161 @@
 <title>ANSA - About</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Hero section for About page */
-.hero {
-  background: url('https://media.istockphoto.com/id/1832608268/photo/target-and-goal-icon-digital-business-growth.jpg?s=612x612&w=0&k=20&c=F7WyaunhJqVx0jQiJCrmk4v3tHA3Ku4tztWtl0WWWrM=') no-repeat center center/cover;
-  height: 60vh; /* smaller than home hero */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-}
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #001f3f;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+  }
 
-.hero h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0;
-}
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-.hero p {
-  font-size: 1.3rem;
-  max-width: 800px;
-  margin-top: 15px;
-  line-height: 1.5;
-}
+  /* Header */
+  header nav {
+    background: rgba(0,31,63,0.95);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #00bfff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+    animation: glowPulse 2.5s infinite ease-in-out;
+  }
+
+  @keyframes glowPulse {
+    0% { text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff; color: #00bfff; }
+    50% { text-shadow: 0 0 18px #66ffff, 0 0 36px #00ffff; color: #66ffff; }
+    100% { text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff; color: #00bfff; }
+  }
+
+  .menu {
+    display: flex;
+    gap: 25px;
+  }
+
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .menu a:hover {
+    color: #00bfff;
+  }
+
+  /* Hero section for About page */
+  .hero {
+    background: url('https://media.istockphoto.com/id/1832608268/photo/target-and-goal-icon-digital-business-growth.jpg?s=612x612&w=0&k=20&c=F7WyaunhJqVx0jQiJCrmk4v3tHA3Ku4tztWtl0WWWrM=') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    padding: 0 20px;
+  }
+
+  .hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0,191,255,0.6);
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin-top: 15px;
+    line-height: 1.5;
+    color: #e6e6e6;
+  }
+
+  /* About content section */
+  .about-content {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    line-height: 1.7;
+    color: #ddd;
+  }
+
+  .about-content h3 {
+    color: #00bfff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .about-content p {
+    margin-bottom: 20px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 18px;
+    background: rgba(0,31,63,0.9);
+    color: #ddd;
+  }
+
+  @media (max-width: 720px) {
+    .hero h2 { font-size: 2.4rem; }
+    .hero p { font-size: 1rem; }
+  }
 </style>
 </head>
+
 <body>
 
 <header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html" class="right">Contact</a>
+    <div class="logo">ANSA</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 </header>
 
 <section class="hero">
   <h2>About ANSA</h2>
-    <p>ANSA delivers professional customer service, technical support, and human resource solutions. We are committed to helping businesses improve customer satisfaction and retention with empathy, efficiency, and smart technology.</p>
+  <p>At ANSA, we deliver innovative customer service and technical support solutions that empower businesses to thrive in today’s digital world.</p>
+</section>
+
+<section class="about-content">
+  <h3>Who We Are</h3>
+  <p>ANSA Software Solutions is a customer-centric service provider dedicated to excellence in support, operations, and human resource management. We believe in building strong client relationships through professionalism, reliability, and care.</p>
+
+  <h3>Our Mission</h3>
+  <p>Our mission is to help businesses grow by enhancing customer experience and providing expert technical and operational solutions. We focus on understanding client needs and delivering tailor-made services that drive success.</p>
+
+  <h3>Our Vision</h3>
+  <p>We envision becoming a global leader in outsourced customer experience management, recognized for integrity, innovation, and long-term client partnerships.</p>
+
+  <h3>Our Values</h3>
+  <p>Integrity, teamwork, innovation, and commitment form the core of everything we do. At ANSA, we turn every challenge into an opportunity for growth — for our clients and our people.</p>
 </section>
 
 <footer>
-  <p>&copy; 2025 ANSA SOFTWARE SOLUTIONS. All rights reserved.</p>
+  <small>&copy; 2025 ANSA SOFTWARE SOLUTIONS. All rights reserved.</small>
 </footer>
 
 </body>
