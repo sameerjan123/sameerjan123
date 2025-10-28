@@ -73,7 +73,6 @@ header nav{
   margin:50px 0;
 }
 
-/* Fire glowing box */
 .contact-box{
   background:rgba(0,0,0,0.4);
   padding:25px;
@@ -89,19 +88,16 @@ header nav{
   text-shadow:0 0 8px #ffae42,0 0 15px #ffd700;
   margin-bottom:10px;
 }
-
-/* Clickable contact links */
-.contact-link{
+.contact-box a{
   color:#fff;
   text-decoration:none;
-  transition:0.3s;
 }
-.contact-link:hover{
+.contact-box a:hover{
   color:#ffae42;
-  text-shadow:0 0 10px #ffae42;
+  text-decoration:underline;
 }
 
-/* Form */
+/* Form styles */
 .contact-box form input,
 .contact-box form textarea{
   width:100%;
@@ -161,34 +157,32 @@ footer{
 
   <div class="contact-box">
     <h3>Office Location</h3>
-    <p>
-      <a class="contact-link" href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank" rel="noopener">
-        ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
-      </a>
-    </p>
+    <p><a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank">ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA</a></p>
   </div>
 
   <div class="contact-box">
     <h3>Call Us</h3>
-    <p>
-      <a class="contact-link" href="tel:+917006365752">+91 7006365752</a>
-    </p>
+    <p><a href="tel:+917006365752">+91 7006365752</a></p>
   </div>
 
   <div class="contact-box">
     <h3>Email Us</h3>
     <p>
-      <a class="contact-link" href="mailto:info@ansasolutions.com" target="_blank">info@ansasolutions.com</a><br>
-      <a class="contact-link" href="mailto:careers@ansasolutions.com" target="_blank">careers@ansasolutions.com</a>
+      <a href="mailto:info@ansasolutions.com?subject=Inquiry from Website">info@ansasolutions.com</a><br>
+      <a href="mailto:careers@ansasolutions.com?subject=Career Inquiry">careers@ansasolutions.com</a>
     </p>
   </div>
 
   <div class="contact-box">
     <h3>Send Us a Message</h3>
-    <form id="contactForm">
+    <form id="contactForm" action="https://formspree.io/f/mnnoprbj" method="POST">
       <input type="text" name="Name" placeholder="Your Name" required>
       <input type="email" name="Email" placeholder="Your Email" required>
       <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+
+      <!-- Hidden field to show sender’s choice -->
+      <input type="hidden" name="_subject" value="New message from ANSA Contact Form" />
+      <input type="hidden" name="_redirect" value="thankyou.html" />
       <button type="submit">Send Message</button>
     </form>
   </div>
@@ -198,13 +192,6 @@ footer{
 <footer>
   <p>&copy; 2025 ANSA SOFTWARE SOLUTIONS. All rights reserved.</p>
 </footer>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  window.location.href = "thankyou.html";
-});
-</script>
 
 </body>
 </html>
