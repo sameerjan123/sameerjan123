@@ -63,7 +63,7 @@
     color: #00bfff;
   }
 
-  /* Hero section for About page */
+  /* Hero section */
   .hero {
     background: url('https://media.istockphoto.com/id/1832608268/photo/target-and-goal-icon-digital-business-growth.jpg?s=612x612&w=0&k=20&c=F7WyaunhJqVx0jQiJCrmk4v3tHA3Ku4tztWtl0WWWrM=') no-repeat center center/cover;
     height: 60vh;
@@ -92,7 +92,7 @@
     color: #e6e6e6;
   }
 
-  /* About content section */
+  /* About content */
   .about-content {
     max-width: 1000px;
     margin: 60px auto;
@@ -101,17 +101,46 @@
     color: #ddd;
   }
 
-  .about-content h3 {
-    color: #00bfff;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+  /* Fire-glow box */
+  .fire-box {
+    border: 2px solid transparent;
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+    animation: fireGlow 2s infinite alternate ease-in-out;
+    box-shadow: 0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .about-content p {
-    margin-bottom: 20px;
+  /* Hover effect */
+  .fire-box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 30px #ff6347, 0 0 70px #ffae42, 0 0 100px #ffd700;
   }
 
-  /* Footer */
+  @keyframes fireGlow {
+    0% {
+      box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00, 0 0 40px #ffa500;
+    }
+    50% {
+      box-shadow: 0 0 25px #ff6347, 0 0 50px #ffae42, 0 0 75px #ffd700;
+    }
+    100% {
+      box-shadow: 0 0 15px #ff4500, 0 0 30px #ff8c00, 0 0 50px #ffa500;
+    }
+  }
+
+  .fire-box h3 {
+    color: #ffae42;
+    text-shadow: 0 0 8px #ffae42, 0 0 15px #ffd700;
+  }
+
+  .fire-box p {
+    color: #fff5e6;
+  }
+
   footer {
     text-align: center;
     padding: 18px;
@@ -146,17 +175,27 @@
 </section>
 
 <section class="about-content">
-  <h3>Who We Are</h3>
-  <p>ANSA Software Solutions is a customer-centric service provider dedicated to excellence in support, operations, and human resource management. We believe in building strong client relationships through professionalism, reliability, and care.</p>
 
-  <h3>Our Mission</h3>
-  <p>Our mission is to help businesses grow by enhancing customer experience and providing expert technical and operational solutions. We focus on understanding client needs and delivering tailor-made services that drive success.</p>
+  <div class="fire-box">
+    <h3>Who We Are</h3>
+    <p>ANSA Software Solutions is a customer-centric service provider dedicated to excellence in support, operations, and human resource management. We believe in building strong client relationships through professionalism, reliability, and care.</p>
+  </div>
 
-  <h3>Our Vision</h3>
-  <p>We envision becoming a global leader in outsourced customer experience management, recognized for integrity, innovation, and long-term client partnerships.</p>
+  <div class="fire-box">
+    <h3>Our Mission</h3>
+    <p>Our mission is to help businesses grow by enhancing customer experience and providing expert technical and operational solutions. We focus on understanding client needs and delivering tailor-made services that drive success.</p>
+  </div>
 
-  <h3>Our Values</h3>
-  <p>Integrity, teamwork, innovation, and commitment form the core of everything we do. At ANSA, we turn every challenge into an opportunity for growth — for our clients and our people.</p>
+  <div class="fire-box">
+    <h3>Our Vision</h3>
+    <p>We envision becoming a global leader in outsourced customer experience management, recognized for integrity, innovation, and long-term client partnerships.</p>
+  </div>
+
+  <div class="fire-box">
+    <h3>Our Values</h3>
+    <p>Integrity, teamwork, innovation, and commitment form the core of everything we do. At ANSA, we turn every challenge into an opportunity for growth — for our clients and our people.</p>
+  </div>
+
 </section>
 
 <footer>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Received - ANSA Careers</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #001f3f;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.message-box {
+  background: rgba(0,0,0,0.4);
+  padding: 50px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  animation: fireGlow 2s infinite alternate ease-in-out;
+  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
+}
+@keyframes fireGlow {
+  0% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00, 0 0 40px #ffa500; }
+  50% { box-shadow: 0 0 25px #ff6347, 0 0 50px #ffae42, 0 0 75px #ffd700; }
+  100% { box-shadow: 0 0 15px #ff4500, 0 0 30px #ff8c00, 0 0 50px #ffa500; }
+}
+h1 {
+  color: #ffae42;
+  text-shadow: 0 0 8px #ffae42, 0 0 15px #ffd700;
+  margin-bottom: 20px;
+}
+p {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+a {
+  display: inline-block;
+  background: #ffae42;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+a:hover {
+  background: #ff8c00;
+  box-shadow: 0 0 15px #ffae42, 0 0 30px #ff8c00;
+}
+</style>
+</head>
+<body>
+<div class="message-box">
+  <h1>Thank You for Applying!</h1>
+  <p>We’ve received your application successfully.<br>Our team will get back to you soon.</p>
+  <a href="index.html">Back to Home</a>
+</div>
+</body>
+</html>

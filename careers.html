@@ -58,25 +58,41 @@ header nav{
 .hero h2{font-size:3rem;margin:0;}
 .hero p{font-size:1.3rem;max-width:800px;margin-top:15px;line-height:1.5;}
 
-/* Job Cards */
+/* Job List - stacked layout */
 .job-list{
   display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
   margin:60px 0;
 }
+
+/* Fire-glow job card */
 .job-card{
-  background:rgba(0,191,255,0.1);
+  background:rgba(0,0,0,0.4);
   padding:25px;
   border-radius:15px;
-  width:280px;
+  width:80%;
+  max-width:700px;
   text-align:center;
-  transition:0.3s;
+  animation: fireGlow 2s infinite alternate ease-in-out;
+  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 .job-card:hover{
-  background:rgba(0,191,255,0.2);
-  transform:translateY(-5px);
+  transform:translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px #ff6347, 0 0 70px #ffae42, 0 0 100px #ffd700;
+}
+@keyframes fireGlow {
+  0% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00, 0 0 40px #ffa500; }
+  50% { box-shadow: 0 0 25px #ff6347, 0 0 50px #ffae42, 0 0 75px #ffd700; }
+  100% { box-shadow: 0 0 15px #ff4500, 0 0 30px #ff8c00, 0 0 50px #ffa500; }
+}
+
+.job-card h3{
+  color:#ffae42;
+  text-shadow:0 0 8px #ffae42,0 0 15px #ffd700;
+  margin-bottom:10px;
 }
 .job-card ul{
   display:none;
@@ -86,14 +102,26 @@ header nav{
   margin-top:15px;
 }
 .job-card:hover ul{display:block;}
-.job-card h3{color:#00bfff;margin-bottom:10px;}
 .job-card button{
-  background:#00bfff;border:none;padding:10px 20px;border-radius:25px;
-  color:#fff;font-size:1rem;margin-top:10px;cursor:pointer;transition:0.3s;
+  background:#ffae42;
+  border:none;
+  padding:10px 20px;
+  border-radius:25px;
+  color:#fff;
+  font-size:1rem;
+  margin-top:10px;
+  cursor:pointer;
+  transition:0.3s;
 }
-.job-card button:hover{background:#0099cc;}
+.job-card button:hover{background:#ff8c00;}
 
-footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;font-size:.9rem;}
+footer{
+  text-align:center;
+  padding:20px;
+  background:rgba(0,31,63,0.9);
+  color:#ccc;
+  font-size:.9rem;
+}
 </style>
 </head>
 <body>
@@ -164,10 +192,8 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
 
 <script>
 function applyJob(title){
-  // Redirect to apply.html with job title in URL
   window.location.href = "apply.html?job=" + encodeURIComponent(title);
 }
 </script>
-
 </body>
 </html>
