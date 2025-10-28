@@ -9,56 +9,95 @@ html,body{
   margin:0;
   height:100%;
   font-family:"Poppins",sans-serif;
-  background:#001f3f;
+  background:linear-gradient(135deg,#001f3f,#003366,#004080);
   color:#fff;
   display:flex;
   justify-content:center;
   align-items:center;
+  flex-direction:column;
   text-align:center;
+  overflow:hidden;
   opacity:0;
   animation:fadeIn 1.5s ease-in forwards;
 }
 @keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px);}
+  from{opacity:0;transform:translateY(15px);}
   to{opacity:1;transform:translateY(0);}
 }
-.thankyou-box{
+
+/* Glowing check animation */
+.checkmark {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   background:rgba(0,191,255,0.1);
-  padding:40px 60px;
-  border-radius:15px;
-  box-shadow:0 0 20px #00bfff,0 0 40px #00bfff;
-  animation:glow 2s infinite alternate;
+  border:3px solid #00bfff;
+  animation:pulse 2s infinite;
+  margin-bottom:20px;
 }
-@keyframes glow{
-  from{box-shadow:0 0 15px #00bfff;}
-  to{box-shadow:0 0 30px #00ffff;}
+@keyframes pulse {
+  0% { box-shadow:0 0 0 0 rgba(0,191,255,0.6);}
+  70% { box-shadow:0 0 0 20px rgba(0,191,255,0);}
+  100% { box-shadow:0 0 0 0 rgba(0,191,255,0);}
 }
-.thankyou-box h2{
+.checkmark svg {
+  width:60px;
+  height:60px;
+  stroke:#00bfff;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
+  stroke-dasharray:48;
+  stroke-dashoffset:48;
+  animation:draw 1.2s ease forwards 0.3s;
+}
+@keyframes draw {
+  to { stroke-dashoffset:0; }
+}
+
+h1 {
+  font-size:2.5rem;
   color:#00bfff;
-  font-size:2rem;
-  margin-bottom:10px;
+  margin:10px 0;
+  letter-spacing:1px;
 }
-.thankyou-box p{
+p {
+  font-size:1.2rem;
   color:#ddd;
-  font-size:1.1rem;
-  margin-bottom:25px;
+  max-width:600px;
 }
-.thankyou-box a{
-  color:#fff;
+a {
+  margin-top:25px;
+  display:inline-block;
   background:#00bfff;
-  padding:10px 20px;
-  border-radius:8px;
+  color:#fff;
   text-decoration:none;
+  padding:12px 25px;
+  border-radius:6px;
+  font-weight:500;
   transition:0.3s;
 }
-.thankyou-box a:hover{background:#0099cc;}
+a:hover {
+  background:#0099cc;
+  transform:scale(1.05);
+}
 </style>
 </head>
 <body>
-  <div class="thankyou-box">
-    <h2>🔥 Thank You for Contacting Us!</h2>
-    <p>We’ve received your message and will get back to you soon.</p>
-    <a href="index.html">Back to Home</a>
-  </div>
+
+<div class="checkmark">
+  <svg viewBox="0 0 52 52">
+    <path d="M14 27 l8 8 l16 -16"></path>
+  </svg>
+</div>
+
+<h1>Thank You!</h1>
+<p>Your message has been successfully sent.<br>We appreciate your interest and will get back to you shortly.</p>
+<a href="index.html">Back to Home</a>
+
 </body>
 </html>
