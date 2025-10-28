@@ -6,165 +6,122 @@
 <title>ANSA - Careers</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Hero section for Careers page */
-.hero {
-  background: url('https://t3.ftcdn.net/jpg/02/27/64/36/360_F_227643697_wQEqPFyvZEvjnomWrW6XvkH6q1Jj4Feq.jpg') no-repeat center center/cover;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
+html,body{
+  height:100%;
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:#001f3f;
+  color:#fff;
+  opacity:0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(15px); }
+  to { opacity:1; transform:translateY(0); }
 }
 
-.hero h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0;
+/* Header */
+header nav{
+  background:rgba(0,31,63,0.95);
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:10;
 }
+.logo{
+  font-size:2rem;
+  font-weight:900;
+  color:#00bfff;
+  letter-spacing:2px;
+  text-shadow:0 0 10px #00bfff,0 0 20px #00bfff,0 0 30px #00bfff;
+  animation:glowPulse 2.5s infinite ease-in-out;
+}
+@keyframes glowPulse{
+  0%{text-shadow:0 0 8px #00bfff,0 0 16px #00bfff;}
+  50%{text-shadow:0 0 18px #66ffff,0 0 36px #00ffff;}
+  100%{text-shadow:0 0 8px #00bfff,0 0 16px #00bfff;}
+}
+.menu{display:flex;gap:25px;}
+.menu a{color:#fff;text-decoration:none;font-weight:500;transition:.3s;}
+.menu a:hover{color:#00bfff;}
 
-.hero p {
-  font-size: 1.3rem;
-  max-width: 800px;
-  margin-top: 15px;
-  line-height: 1.5;
+/* Hero section */
+.hero{
+  background:url('https://t3.ftcdn.net/jpg/02/27/64/36/360_F_227643697_wQEqPFyvZEvjnomWrW6XvkH6q1Jj4Feq.jpg') no-repeat center center/cover;
+  height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
+.hero h2{font-size:3rem;margin:0;}
+.hero p{font-size:1.3rem;max-width:800px;margin-top:15px;line-height:1.5;}
 
-/* Careers Job Cards */
-.job-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin: 60px 0;
+/* Job Cards */
+.job-list{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  margin:60px 0;
 }
+.job-card{
+  background:rgba(0,191,255,0.1);
+  padding:25px;
+  border-radius:15px;
+  width:280px;
+  text-align:center;
+  transition:0.3s;
+}
+.job-card:hover{
+  background:rgba(0,191,255,0.2);
+  transform:translateY(-5px);
+}
+.job-card ul{
+  display:none;
+  text-align:left;
+  padding-left:20px;
+  color:#ddd;
+  margin-top:15px;
+}
+.job-card:hover ul{display:block;}
+.job-card h3{color:#00bfff;margin-bottom:10px;}
+.job-card button{
+  background:#00bfff;border:none;padding:10px 20px;border-radius:25px;
+  color:#fff;font-size:1rem;margin-top:10px;cursor:pointer;transition:0.3s;
+}
+.job-card button:hover{background:#0099cc;}
 
-.job-card {
-  background: rgba(0,191,255,0.1);
-  padding: 25px;
-  border-radius: 15px;
-  width: 280px;
-  text-align: center;
-  position: relative;
-  transition: 0.3s;
+/* Modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);
+  justify-content:center;align-items:center;z-index:1000;}
+.modal-content{
+  background:#002b5b;padding:30px;border-radius:15px;width:90%;max-width:500px;
+  color:#fff;text-align:left;position:relative;
 }
-
-.job-card:hover {
-  background: rgba(0,191,255,0.2);
-  transform: translateY(-5px);
+.modal-content input,.modal-content button{
+  width:100%;margin:10px 0;padding:10px;border-radius:5px;border:none;font-size:1rem;
 }
-
-/* Hide responsibilities by default */
-.job-card ul {
-  display: none;
-  text-align: left;
-  padding-left: 20px;
-  color: #ddd;
-  margin-top: 15px;
-}
-
-/* Show on hover */
-.job-card:hover ul {
-  display: block;
-}
-
-.job-card h3 {
-  color: #00bfff;
-  margin-bottom: 10px;
-}
-
-.job-card button {
-  background: #00bfff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: #fff;
-  font-size: 1rem;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.job-card button:hover {
-  background: #0099cc;
-}
-
-/* Modal Form */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: #002b5b;
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 500px;
-  color: #fff;
-  text-align: left;
-  position: relative;
-}
-
-.modal-content input,
-.modal-content button {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-}
-
-.modal-content input {
-  background: #fff;
-  color: #000;
-}
-
-.modal-content button {
-  background: #00bfff;
-  color: #fff;
-  cursor: pointer;
-}
-
-.modal-content button:hover {
-  background: #0099cc;
-}
-
-.close-btn {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Footer style */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 31, 63, 0.9);
-  color: #ccc;
-  font-size: 0.9rem;
-}
+.modal-content input{background:#fff;color:#000;}
+.modal-content button{background:#00bfff;color:#fff;cursor:pointer;}
+.modal-content button:hover{background:#0099cc;}
+.close-btn{position:absolute;right:15px;top:10px;font-size:24px;cursor:pointer;color:#fff;}
+footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;font-size:.9rem;}
 </style>
 </head>
-
 <body>
-
 <header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html" class="right">Contact</a>
+    <div class="logo">ANSA</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 </header>
 
@@ -173,59 +130,50 @@ footer {
   <p>Join our dynamic team and grow your career with innovation, passion, and excellence.</p>
 </section>
 
-<section class="careers-section">
+<section>
   <div class="job-list">
-
-    <!-- Human Resources -->
     <div class="job-card">
       <h3>Human Resources Assistant</h3>
       <ul>
-        <li>Manage recruitment and onboarding processes</li>
-        <li>Oversee employee engagement programs</li>
+        <li>Manage recruitment and onboarding</li>
+        <li>Employee engagement programs</li>
         <li>Maintain HR policies and documentation</li>
-        <li>Coordinate performance reviews and reports</li>
       </ul>
       <button onclick="openForm('Human Resources Assistant')">Apply Now</button>
     </div>
 
-    <!-- Business Executive -->
     <div class="job-card">
       <h3>Business Executive</h3>
       <ul>
-        <li>Identify and approach potential IT clients</li>
-        <li>Build and maintain strong client relationships</li>
-        <li>Develop strategies for client acquisition</li>
-        <li>Meet business growth and revenue targets</li>
+        <li>Identify and approach clients</li>
+        <li>Build client relationships</li>
+        <li>Develop acquisition strategies</li>
       </ul>
       <button onclick="openForm('Business Executive')">Apply Now</button>
     </div>
 
-    <!-- Customer Service Executive -->
     <div class="job-card">
       <h3>Customer Service Executive</h3>
       <ul>
-        <li>Provide top-quality client support</li>
-        <li>Resolve customer queries efficiently</li>
-        <li>Ensure customer satisfaction and retention</li>
+        <li>Provide client support</li>
+        <li>Resolve queries efficiently</li>
+        <li>Ensure satisfaction and retention</li>
       </ul>
       <button onclick="openForm('Customer Service Executive')">Apply Now</button>
     </div>
 
-    <!-- Technical Support Specialist -->
     <div class="job-card">
       <h3>Technical Support Specialist</h3>
       <ul>
-        <li>Assist customers with technical issues</li>
-        <li>Provide solutions and product guidance</li>
-        <li>Report and document system bugs</li>
+        <li>Assist customers with issues</li>
+        <li>Provide solutions and guidance</li>
+        <li>Report bugs</li>
       </ul>
       <button onclick="openForm('Technical Support Specialist')">Apply Now</button>
     </div>
-
   </div>
 </section>
 
-<!-- Modal Form -->
 <div class="modal" id="applyModal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeForm()">&times;</span>
@@ -233,10 +181,9 @@ footer {
     <form action="https://formsubmit.co/sameerjan1246@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="New Job Application from ANSA Website">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" id="jobPosition" name="Job Position" value="">
+      <input type="hidden" id="jobPosition" name="Job Position">
       <input type="text" name="Name" placeholder="Your Name" required>
       <input type="text" name="Address" placeholder="Your Address" required>
-
       <input type="email" name="Email" placeholder="Your Email" required>
       <input type="file" name="Resume" accept=".pdf,.doc,.docx" required>
       <button type="submit">Submit Application</button>
@@ -249,20 +196,13 @@ footer {
 </footer>
 
 <script>
-function openForm(title) {
-  document.getElementById("applyModal").style.display = "flex";
-  document.getElementById("jobTitle").textContent = "Apply for " + title;
-  document.getElementById("jobPosition").value = title;
+function openForm(title){
+  document.getElementById("applyModal").style.display="flex";
+  document.getElementById("jobTitle").textContent="Apply for "+title;
+  document.getElementById("jobPosition").value=title;
 }
-
-function closeForm() {
-  document.getElementById("applyModal").style.display = "none";
-}
-
-window.onclick = function(e) {
-  if (e.target == document.getElementById("applyModal")) closeForm();
-};
+function closeForm(){document.getElementById("applyModal").style.display="none";}
+window.onclick=function(e){if(e.target==document.getElementById("applyModal"))closeForm();}
 </script>
-
 </body>
 </html>
