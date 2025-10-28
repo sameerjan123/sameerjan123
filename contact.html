@@ -57,14 +57,14 @@ header nav{
   text-shadow:0 0 10px #00bfff,0 0 25px #00ffff;
 }
 
-/* Fire glow animation (same as Careers/About pages) */
+/* Fire glow animation */
 @keyframes fireGlow {
   0% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00, 0 0 40px #ffa500; }
   50% { box-shadow: 0 0 25px #ff6347, 0 0 50px #ffae42, 0 0 75px #ffd700; }
   100% { box-shadow: 0 0 15px #ff4500, 0 0 30px #ff8c00, 0 0 50px #ffa500; }
 }
 
-/* Contact section layout */
+/* Contact section */
 .contact-section{
   display:flex;
   flex-direction:column;
@@ -73,7 +73,7 @@ header nav{
   margin:50px 0;
 }
 
-/* Fire glowing box style */
+/* Fire glowing box */
 .contact-box{
   background:rgba(0,0,0,0.4);
   padding:25px;
@@ -90,7 +90,18 @@ header nav{
   margin-bottom:10px;
 }
 
-/* Form inside glowing box */
+/* Clickable contact links */
+.contact-link{
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+.contact-link:hover{
+  color:#ffae42;
+  text-shadow:0 0 10px #ffae42;
+}
+
+/* Form */
 .contact-box form input,
 .contact-box form textarea{
   width:100%;
@@ -150,17 +161,26 @@ footer{
 
   <div class="contact-box">
     <h3>Office Location</h3>
-    <p>ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA</p>
+    <p>
+      <a class="contact-link" href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank" rel="noopener">
+        ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
+      </a>
+    </p>
   </div>
 
   <div class="contact-box">
     <h3>Call Us</h3>
-    <p>+91 7006365752</p>
+    <p>
+      <a class="contact-link" href="tel:+917006365752">+91 7006365752</a>
+    </p>
   </div>
 
   <div class="contact-box">
     <h3>Email Us</h3>
-    <p>info@ansasolutions.com<br>careers@ansasolutions.com</p>
+    <p>
+      <a class="contact-link" href="mailto:info@ansasolutions.com" target="_blank">info@ansasolutions.com</a><br>
+      <a class="contact-link" href="mailto:careers@ansasolutions.com" target="_blank">careers@ansasolutions.com</a>
+    </p>
   </div>
 
   <div class="contact-box">
