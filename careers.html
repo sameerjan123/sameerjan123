@@ -27,8 +27,6 @@ header nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:relative;
-  z-index:10;
 }
 .logo{
   font-size:2rem;
@@ -95,20 +93,6 @@ header nav{
 }
 .job-card button:hover{background:#0099cc;}
 
-/* Modal */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);
-  justify-content:center;align-items:center;z-index:1000;}
-.modal-content{
-  background:#002b5b;padding:30px;border-radius:15px;width:90%;max-width:500px;
-  color:#fff;text-align:left;position:relative;
-}
-.modal-content input,.modal-content button{
-  width:100%;margin:10px 0;padding:10px;border-radius:5px;border:none;font-size:1rem;
-}
-.modal-content input{background:#fff;color:#000;}
-.modal-content button{background:#00bfff;color:#fff;cursor:pointer;}
-.modal-content button:hover{background:#0099cc;}
-.close-btn{position:absolute;right:15px;top:10px;font-size:24px;cursor:pointer;color:#fff;}
 footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;font-size:.9rem;}
 </style>
 </head>
@@ -139,7 +123,7 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
         <li>Employee engagement programs</li>
         <li>Maintain HR policies and documentation</li>
       </ul>
-      <button onclick="openForm('Human Resources Assistant')">Apply Now</button>
+      <button onclick="applyJob('Human Resources Assistant')">Apply Now</button>
     </div>
 
     <div class="job-card">
@@ -149,7 +133,7 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
         <li>Build client relationships</li>
         <li>Develop acquisition strategies</li>
       </ul>
-      <button onclick="openForm('Business Executive')">Apply Now</button>
+      <button onclick="applyJob('Business Executive')">Apply Now</button>
     </div>
 
     <div class="job-card">
@@ -159,7 +143,7 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
         <li>Resolve queries efficiently</li>
         <li>Ensure satisfaction and retention</li>
       </ul>
-      <button onclick="openForm('Customer Service Executive')">Apply Now</button>
+      <button onclick="applyJob('Customer Service Executive')">Apply Now</button>
     </div>
 
     <div class="job-card">
@@ -169,40 +153,21 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
         <li>Provide solutions and guidance</li>
         <li>Report bugs</li>
       </ul>
-      <button onclick="openForm('Technical Support Specialist')">Apply Now</button>
+      <button onclick="applyJob('Technical Support Specialist')">Apply Now</button>
     </div>
   </div>
 </section>
-
-<div class="modal" id="applyModal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeForm()">&times;</span>
-    <h3 id="jobTitle">Apply Now</h3>
-    <form action="https://formsubmit.co/sameerjan1246@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="New Job Application from ANSA Website">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" id="jobPosition" name="Job Position">
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="text" name="Address" placeholder="Your Address" required>
-      <input type="email" name="Email" placeholder="Your Email" required>
-      <input type="file" name="Resume" accept=".pdf,.doc,.docx" required>
-      <button type="submit">Submit Application</button>
-    </form>
-  </div>
-</div>
 
 <footer>
   <p>&copy; 2025 ANSA SOFTWARE SOLUTIONS. All rights reserved.</p>
 </footer>
 
 <script>
-function openForm(title){
-  document.getElementById("applyModal").style.display="flex";
-  document.getElementById("jobTitle").textContent="Apply for "+title;
-  document.getElementById("jobPosition").value=title;
+function applyJob(title){
+  // Redirect to apply.html with job title in URL
+  window.location.href = "apply.html?job=" + encodeURIComponent(title);
 }
-function closeForm(){document.getElementById("applyModal").style.display="none";}
-window.onclick=function(e){if(e.target==document.getElementById("applyModal"))closeForm();}
 </script>
+
 </body>
 </html>
