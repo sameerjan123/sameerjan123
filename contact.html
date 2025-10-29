@@ -14,15 +14,20 @@ html,body{
   animation:fadeIn 1.2s ease-in forwards;
 }
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fireGlow{0%{box-shadow:0 0 10px #ff4500,0 0 20px #ff8c00,0 0 40px #ffa500;}
-50%{box-shadow:0 0 25px #ff6347,0 0 50px #ffae42,0 0 75px #ffd700;}
-100%{box-shadow:0 0 15px #ff4500,0 0 30px #ff8c00,0 0 50px #ffa500;}}
+@keyframes fireGlow{
+  0%{box-shadow:0 0 10px #ff4500,0 0 20px #ff8c00,0 0 40px #ffa500;}
+  50%{box-shadow:0 0 25px #ff6347,0 0 50px #ffae42,0 0 75px #ffd700;}
+  100%{box-shadow:0 0 15px #ff4500,0 0 30px #ff8c00,0 0 50px #ffa500;}
+}
+
+/* --- HEADER (exact same as Career page + responsive) --- */
 header nav{
   background:rgba(0,31,63,0.95);
   padding:14px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
 }
 .logo{
   font-size:2rem;
@@ -30,10 +35,47 @@ header nav{
   color:#00bfff;
   letter-spacing:2px;
   text-shadow:0 0 10px #00bfff,0 0 20px #00bfff,0 0 30px #00bfff;
+  animation:glowPulse 2.5s infinite ease-in-out;
 }
-.menu{display:flex;gap:25px;}
-.menu a{color:#fff;text-decoration:none;font-weight:500;transition:.25s;}
-.menu a:hover{color:#00bfff;}
+@keyframes glowPulse{
+  0%{text-shadow:0 0 8px #00bfff,0 0 16px #00bfff;}
+  50%{text-shadow:0 0 18px #66ffff,0 0 36px #00ffff;}
+  100%{text-shadow:0 0 8px #00bfff,0 0 16px #00bfff;}
+}
+.menu{
+  display:flex;
+  gap:25px;
+}
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+.menu a:hover{
+  color:#00bfff;
+}
+/* --- Responsive Menu --- */
+@media (max-width:768px){
+  nav{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:10px 25px;
+  }
+  .logo{font-size:1.8rem;margin-bottom:10px;}
+  .menu{
+    flex-direction:column;
+    width:100%;
+    gap:12px;
+  }
+  .menu a{
+    width:100%;
+    text-align:left;
+    padding:8px 0;
+  }
+}
+
+/* --- REST OF YOUR CONTACT PAGE --- */
 .hero{
   background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') 
   no-repeat center center/cover;
