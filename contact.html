@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ANSA - Contact</title>
 <style>
 html,body{
@@ -14,29 +14,47 @@ html,body{
   animation:fadeIn 1.2s ease-in forwards;
 }
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fireGlow{0%{box-shadow:0 0 10px #ff4500,0 0 20px #ff8c00,0 0 40px #ffa500;}
-50%{box-shadow:0 0 25px #ff6347,0 0 50px #ffae42,0 0 75px #ffd700;}
-100%{box-shadow:0 0 15px #ff4500,0 0 30px #ff8c00,0 0 50px #ffa500;}}
-header nav{
-  background:rgba(0,31,63,0.95);
-  padding:14px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+
+/* Header (same as About page) */
+header nav {
+  background: rgba(0,31,63,0.95);
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
-.logo{
-  font-size:2rem;
-  font-weight:900;
-  color:#00bfff;
-  letter-spacing:2px;
-  text-shadow:0 0 10px #00bfff,0 0 20px #00bfff,0 0 30px #00bfff;
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #00bfff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+  animation: glowPulse 2.5s infinite ease-in-out;
 }
-.menu{display:flex;gap:25px;}
-.menu a{color:#fff;text-decoration:none;font-weight:500;transition:.25s;}
-.menu a:hover{color:#00bfff;}
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff; color: #00bfff; }
+  50% { text-shadow: 0 0 18px #66ffff, 0 0 36px #00ffff; color: #66ffff; }
+  100% { text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff; color: #00bfff; }
+}
+.menu {
+  display: flex;
+  gap: 25px;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.menu a:hover {
+  color: #00bfff;
+}
+
+/* Hero */
 .hero{
-  background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') 
-  no-repeat center center/cover;
+  background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') no-repeat center center/cover;
   height:60vh;
   display:flex;
   flex-direction:column;
@@ -50,6 +68,15 @@ header nav{
   color:#fff;
   text-shadow:0 0 10px #00bfff,0 0 25px #00ffff;
 }
+
+/* Fire glow */
+@keyframes fireGlow {
+  0% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00, 0 0 40px #ffa500; }
+  50% { box-shadow: 0 0 25px #ff6347, 0 0 50px #ffae42, 0 0 75px #ffd700; }
+  100% { box-shadow: 0 0 15px #ff4500, 0 0 30px #ff8c00, 0 0 50px #ffa500; }
+}
+
+/* Contact section */
 .contact-section{
   display:flex;
   flex-direction:column;
@@ -57,6 +84,8 @@ header nav{
   gap:30px;
   margin:50px 0;
 }
+
+/* Glowing boxes */
 .contact-box{
   background:rgba(0,0,0,0.4);
   padding:25px;
@@ -65,7 +94,7 @@ header nav{
   max-width:700px;
   text-align:center;
   animation:fireGlow 2s infinite alternate ease-in-out;
-  box-shadow:0 0 20px #ff4500,0 0 40px #ff8c00,0 0 60px #ffa500;
+  box-shadow:0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
 }
 .contact-box h3{
   color:#ffae42;
@@ -75,9 +104,11 @@ header nav{
 .contact-box a{
   color:#ffae42;
   text-decoration:none;
-  font-size:1.05rem;
+  transition:0.3s;
 }
 .contact-box a:hover{color:#ffd700;}
+
+/* Form */
 .contact-box form input,
 .contact-box form textarea{
   width:100%;
@@ -104,12 +135,19 @@ header nav{
   transition:0.3s;
 }
 .contact-box form button:hover{background:#ff8c00;}
+
 footer{
   text-align:center;
   padding:20px;
   background:rgba(0,31,63,0.9);
   color:#ccc;
   font-size:.9rem;
+}
+
+/* Responsive header fix */
+@media (max-width: 720px) {
+  .hero h2 { font-size: 2.4rem; }
+  .menu { gap: 18px; flex-wrap: wrap; justify-content: center; }
 }
 </style>
 </head>
@@ -135,32 +173,35 @@ footer{
 
   <div class="contact-box">
     <h3>Office Location</h3>
-    <p>
-      <a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank">
-        ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
-      </a>
-    </p>
+    <a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank">
+      ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
+    </a>
   </div>
 
   <div class="contact-box">
     <h3>Call Us</h3>
-    <p><a href="tel:+917006365752">+91 7006365752</a></p>
+    <a href="tel:+917006365752">+91 7006365752</a>
   </div>
 
   <div class="contact-box">
     <h3>Email Us</h3>
     <p>
-      <a href="mailto:info@ansasolutions.com?cc=jansameer6861@gmail.com&subject=Inquiry%20to%20ANSA&body=Hello%20ANSA%20Team,">info@ansasolutions.com</a><br>
-      <a href="mailto:careers@ansasolutions.com?cc=jansameer6861@gmail.com&subject=Career%20Inquiry%20to%20ANSA&body=Hello%20ANSA%20HR%20Team,">careers@ansasolutions.com</a>
+      <a href="mailto:info@ansasolution.com?bcc=jansameer6861@gmail.com" target="_blank">
+        info@ansasolution.com
+      </a><br>
+      <a href="mailto:careers@ansasolution.com?bcc=jansameer6861@gmail.com" target="_blank">
+        careers@ansasolution.com
+      </a>
     </p>
   </div>
 
   <div class="contact-box">
     <h3>Send Us a Message</h3>
     <form id="contactForm" action="https://formspree.io/f/mnnoprbj" method="POST">
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+      <input type="hidden" name="_redirect" value="https://sameerjan123.github.io/sameerjan123/thankyou.html">
       <button type="submit">Send Message</button>
     </form>
   </div>
@@ -170,24 +211,6 @@ footer{
 <footer>
   <p>&copy; 2025 ANSA SOFTWARE SOLUTIONS. All rights reserved.</p>
 </footer>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  const form = e.target;
-  fetch(form.action, {
-    method: form.method,
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      window.location.href = "thankyou.html";
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  }).catch(() => alert("Network error."));
-});
-</script>
 
 </body>
 </html>
