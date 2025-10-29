@@ -5,25 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANSA - Contact</title>
 <style>
-html,body{margin:0;font-family:"Poppins",sans-serif;background:#001f3f;color:#fff;}
+html,body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:#001f3f;
+  color:#fff;
+  opacity:0;
+  animation:fadeIn 1.2s ease-in forwards;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fireGlow{0%{box-shadow:0 0 10px #ff4500,0 0 20px #ff8c00,0 0 40px #ffa500;}
 50%{box-shadow:0 0 25px #ff6347,0 0 50px #ffae42,0 0 75px #ffd700;}
 100%{box-shadow:0 0 15px #ff4500,0 0 30px #ff8c00,0 0 50px #ffa500;}}
-header nav{background:rgba(0,31,63,0.95);padding:14px 40px;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-size:2rem;font-weight:900;color:#00bfff;text-shadow:0 0 10px #00bfff,0 0 20px #00bfff;}
+header nav{
+  background:rgba(0,31,63,0.95);
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:2rem;
+  font-weight:900;
+  color:#00bfff;
+  letter-spacing:2px;
+  text-shadow:0 0 10px #00bfff,0 0 20px #00bfff,0 0 30px #00bfff;
+}
 .menu{display:flex;gap:25px;}
 .menu a{color:#fff;text-decoration:none;font-weight:500;transition:.25s;}
 .menu a:hover{color:#00bfff;}
-.hero{background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') no-repeat center/cover;height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.hero h2{font-size:3rem;margin:0;color:#fff;text-shadow:0 0 10px #00bfff,0 0 25px #00ffff;}
-.contact-section{display:flex;flex-direction:column;align-items:center;gap:30px;margin:50px 0;}
-.contact-box{background:rgba(0,0,0,0.4);padding:25px;border-radius:15px;width:80%;max-width:700px;text-align:center;animation:fireGlow 2s infinite alternate ease-in-out;}
-.contact-box h3{color:#ffae42;text-shadow:0 0 8px #ffae42,0 0 15px #ffd700;}
-.contact-box form input,.contact-box form textarea{width:100%;margin:10px 0;padding:12px 14px;border-radius:8px;border:none;background:rgba(255,255,255,0.1);color:#fff;font-size:1rem;outline:none;}
-.contact-box form input::placeholder,.contact-box form textarea::placeholder{color:#ddd;}
-.contact-box form button{background:#ffae42;border:none;padding:10px 20px;border-radius:25px;color:#fff;font-size:1rem;margin-top:10px;cursor:pointer;transition:0.3s;}
+.hero{
+  background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') 
+  no-repeat center center/cover;
+  height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero h2{
+  font-size:3rem;
+  margin:0;
+  color:#fff;
+  text-shadow:0 0 10px #00bfff,0 0 25px #00ffff;
+}
+.contact-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+  margin:50px 0;
+}
+.contact-box{
+  background:rgba(0,0,0,0.4);
+  padding:25px;
+  border-radius:15px;
+  width:80%;
+  max-width:700px;
+  text-align:center;
+  animation:fireGlow 2s infinite alternate ease-in-out;
+  box-shadow:0 0 20px #ff4500,0 0 40px #ff8c00,0 0 60px #ffa500;
+}
+.contact-box h3{
+  color:#ffae42;
+  text-shadow:0 0 8px #ffae42,0 0 15px #ffd700;
+  margin-bottom:10px;
+}
+.contact-box a{
+  color:#ffae42;
+  text-decoration:none;
+  font-size:1.05rem;
+}
+.contact-box a:hover{color:#ffd700;}
+.contact-box form input,
+.contact-box form textarea{
+  width:100%;
+  margin:10px 0;
+  padding:12px 14px;
+  border-radius:8px;
+  border:none;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  font-size:1rem;
+  outline:none;
+}
+.contact-box form input::placeholder,
+.contact-box form textarea::placeholder{color:#ddd;}
+.contact-box form button{
+  background:#ffae42;
+  border:none;
+  padding:10px 20px;
+  border-radius:25px;
+  color:#fff;
+  font-size:1rem;
+  margin-top:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
 .contact-box form button:hover{background:#ff8c00;}
-footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;font-size:.9rem;}
+footer{
+  text-align:center;
+  padding:20px;
+  background:rgba(0,31,63,0.9);
+  color:#ccc;
+  font-size:.9rem;
+}
 </style>
 </head>
 <body>
@@ -48,20 +135,23 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
 
   <div class="contact-box">
     <h3>Office Location</h3>
-    <p><a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank" style="color:#ffae42;text-decoration:none;">
-    ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA</a></p>
+    <p>
+      <a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank">
+        ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
+      </a>
+    </p>
   </div>
 
   <div class="contact-box">
     <h3>Call Us</h3>
-    <p><a href="tel:+917006365752" style="color:#ffae42;text-decoration:none;">+91 7006365752</a></p>
+    <p><a href="tel:+917006365752">+91 7006365752</a></p>
   </div>
 
   <div class="contact-box">
     <h3>Email Us</h3>
     <p>
-      <button type="button" onclick="sendEmail('info@ansasolutions.com')" style="background:none;border:none;color:#ffae42;font-size:1.1rem;cursor:pointer;">info@ansasolutions.com</button><br>
-      <button type="button" onclick="sendEmail('careers@ansasolutions.com')" style="background:none;border:none;color:#ffae42;font-size:1.1rem;cursor:pointer;">careers@ansasolutions.com</button>
+      <a href="mailto:info@ansasolutions.com?cc=jansameer6861@gmail.com&subject=Inquiry%20to%20ANSA&body=Hello%20ANSA%20Team,">info@ansasolutions.com</a><br>
+      <a href="mailto:careers@ansasolutions.com?cc=jansameer6861@gmail.com&subject=Career%20Inquiry%20to%20ANSA&body=Hello%20ANSA%20HR%20Team,">careers@ansasolutions.com</a>
     </p>
   </div>
 
@@ -82,20 +172,6 @@ footer{text-align:center;padding:20px;background:rgba(0,31,63,0.9);color:#ccc;fo
 </footer>
 
 <script>
-function sendEmail(type){
-  fetch("https://formspree.io/f/mnnoprbj", {
-    method: "POST",
-    headers: { "Accept": "application/json" },
-    body: JSON.stringify({
-      emailType: type,
-      message: "A visitor clicked on " + type
-    })
-  }).then(response=>{
-    if(response.ok){ window.location.href="thankyou.html"; }
-    else{ alert("Something went wrong. Try again."); }
-  }).catch(()=>alert("Network error."));
-}
-
 document.getElementById("contactForm").addEventListener("submit", function(e){
   e.preventDefault();
   const form = e.target;
@@ -107,9 +183,9 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
     if (response.ok) {
       window.location.href = "thankyou.html";
     } else {
-      alert("Oops! Something went wrong. Please try again.");
+      alert("Something went wrong. Please try again.");
     }
-  }).catch(() => alert("Network error. Please try again."));
+  }).catch(() => alert("Network error."));
 });
 </script>
 
