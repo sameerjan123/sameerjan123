@@ -5,25 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ANSA - Contact</title>
 <style>
-html,body{
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  background:#001f3f;
-  color:#fff;
-  opacity:0;
-  animation:fadeIn 1.2s ease-in forwards;
+html, body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #001f3f;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
 }
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn { from {opacity:0;transform:translateY(12px);} to {opacity:1;transform:translateY(0);} }
 
-/* Header (same as About page) */
-header nav {
-  background: rgba(0,31,63,0.95);
-  padding: 14px 40px;
+/* Header (same on all pages) */
+header {
+  width: 100%;
+  background: rgba(0, 31, 63, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 10;
+  padding: 14px 40px;
+  flex-wrap: wrap;
 }
 .logo {
   font-size: 2rem;
@@ -34,39 +39,48 @@ header nav {
   animation: glowPulse 2.5s infinite ease-in-out;
 }
 @keyframes glowPulse {
-  0% { text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff; color: #00bfff; }
-  50% { text-shadow: 0 0 18px #66ffff, 0 0 36px #00ffff; color: #66ffff; }
-  100% { text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff; color: #00bfff; }
+  0% {text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff;}
+  50% {text-shadow: 0 0 18px #66ffff, 0 0 36px #00ffff;}
+  100% {text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff;}
 }
 .menu {
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
 }
 .menu a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: 0.25s;
 }
-.menu a:hover {
-  color: #00bfff;
+.menu a:hover { color: #00bfff; }
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
-/* Hero */
-.hero{
-  background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') no-repeat center center/cover;
-  height:60vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+/* Hero section */
+.hero {
+  background: url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.hero h2{
-  font-size:3rem;
-  margin:0;
-  color:#fff;
-  text-shadow:0 0 10px #00bfff,0 0 25px #00ffff;
+.hero h2 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 10px #00bfff, 0 0 25px #00ffff;
 }
 
 /* Fire glow */
@@ -77,77 +91,71 @@ header nav {
 }
 
 /* Contact section */
-.contact-section{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:30px;
-  margin:50px 0;
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 50px 0;
 }
 
 /* Glowing boxes */
-.contact-box{
-  background:rgba(0,0,0,0.4);
-  padding:25px;
-  border-radius:15px;
-  width:80%;
-  max-width:700px;
-  text-align:center;
-  animation:fireGlow 2s infinite alternate ease-in-out;
-  box-shadow:0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
+.contact-box {
+  background: rgba(0,0,0,0.4);
+  padding: 25px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  animation: fireGlow 2s infinite alternate ease-in-out;
+  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
 }
-.contact-box h3{
-  color:#ffae42;
-  text-shadow:0 0 8px #ffae42,0 0 15px #ffd700;
-  margin-bottom:10px;
+.contact-box h3 {
+  color: #ffae42;
+  text-shadow: 0 0 8px #ffae42, 0 0 15px #ffd700;
+  margin-bottom: 10px;
 }
-.contact-box a{
-  color:#ffae42;
-  text-decoration:none;
-  transition:0.3s;
+.contact-box a {
+  color: #ffae42;
+  text-decoration: none;
+  transition: 0.3s;
 }
-.contact-box a:hover{color:#ffd700;}
+.contact-box a:hover { color: #ffd700; }
 
 /* Form */
 .contact-box form input,
-.contact-box form textarea{
-  width:100%;
-  margin:10px 0;
-  padding:12px 14px;
-  border-radius:8px;
-  border:none;
-  background:rgba(255,255,255,0.1);
-  color:#fff;
-  font-size:1rem;
-  outline:none;
+.contact-box form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
 }
 .contact-box form input::placeholder,
-.contact-box form textarea::placeholder{color:#ddd;}
-.contact-box form button{
-  background:#ffae42;
-  border:none;
-  padding:10px 20px;
-  border-radius:25px;
-  color:#fff;
-  font-size:1rem;
-  margin-top:10px;
-  cursor:pointer;
-  transition:0.3s;
+.contact-box form textarea::placeholder { color: #ddd; }
+.contact-box form button {
+  background: #ffae42;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.contact-box form button:hover{background:#ff8c00;}
+.contact-box form button:hover { background: #ff8c00; }
 
-footer{
-  text-align:center;
-  padding:20px;
-  background:rgba(0,31,63,0.9);
-  color:#ccc;
-  font-size:.9rem;
-}
-
-/* Responsive header fix */
-@media (max-width: 720px) {
-  .hero h2 { font-size: 2.4rem; }
-  .menu { gap: 18px; flex-wrap: wrap; justify-content: center; }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,31,63,0.9);
+  color: #ccc;
+  font-size: 0.9rem;
 }
 </style>
 </head>
@@ -186,10 +194,10 @@ footer{
   <div class="contact-box">
     <h3>Email Us</h3>
     <p>
-      <a href="mailto:info@ansasolution.com?bcc=jansameer6861@gmail.com" target="_blank">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@ansasolution.com&bcc=jansameer6861@gmail.com" target="_blank">
         info@ansasolution.com
       </a><br>
-      <a href="mailto:careers@ansasolution.com?bcc=jansameer6861@gmail.com" target="_blank">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@ansasolution.com&bcc=jansameer6861@gmail.com" target="_blank">
         careers@ansasolution.com
       </a>
     </p>
