@@ -1,161 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANSA - Contact</title>
 <style>
-html, body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: #001f3f;
-  color: #fff;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-in forwards;
+html,body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:#001f3f;
+  color:#fff;
+  opacity:0;
+  animation:fadeIn 1.2s ease-in forwards;
 }
-@keyframes fadeIn { from {opacity:0;transform:translateY(12px);} to {opacity:1;transform:translateY(0);} }
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fireGlow{0%{box-shadow:0 0 10px #ff4500,0 0 20px #ff8c00,0 0 40px #ffa500;}
+50%{box-shadow:0 0 25px #ff6347,0 0 50px #ffae42,0 0 75px #ffd700;}
+100%{box-shadow:0 0 15px #ff4500,0 0 30px #ff8c00,0 0 50px #ffa500;}}
 
-/* Header (same on all pages) */
-header {
-  width: 100%;
-  background: rgba(0, 31, 63, 0.95);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* --- Consistent Header --- */
+header{
+  background:rgba(0,31,63,0.95);
+  width:100%;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 40px;
-  flex-wrap: wrap;
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 50px;
+  flex-wrap:wrap;
 }
-.logo {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #00bfff;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
-  animation: glowPulse 2.5s infinite ease-in-out;
+.logo{
+  font-size:2rem;
+  font-weight:900;
+  color:#00bfff;
+  letter-spacing:2px;
+  text-shadow:0 0 10px #00bfff,0 0 20px #00bfff,0 0 30px #00bfff;
 }
-@keyframes glowPulse {
-  0% {text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff;}
-  50% {text-shadow: 0 0 18px #66ffff, 0 0 36px #00ffff;}
-  100% {text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff;}
+.menu{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
 }
-.menu {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:1rem;
+  transition:color .3s;
 }
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.25s;
-}
-.menu a:hover { color: #00bfff; }
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
+.menu a:hover{color:#00bfff;}
+@media (max-width:768px){
+  nav{flex-direction:column;gap:10px;text-align:center;}
+  .menu{flex-direction:column;gap:10px;}
 }
 
-/* Hero section */
-.hero {
-  background: url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') no-repeat center center/cover;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* --- Rest of your Contact Page --- */
+.hero{
+  background:url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=') 
+  no-repeat center center/cover;
+  height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
-.hero h2 {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 0 0 10px #00bfff, 0 0 25px #00ffff;
+.hero h2{
+  font-size:3rem;
+  margin:0;
+  color:#fff;
+  text-shadow:0 0 10px #00bfff,0 0 25px #00ffff;
 }
-
-/* Fire glow */
-@keyframes fireGlow {
-  0% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00, 0 0 40px #ffa500; }
-  50% { box-shadow: 0 0 25px #ff6347, 0 0 50px #ffae42, 0 0 75px #ffd700; }
-  100% { box-shadow: 0 0 15px #ff4500, 0 0 30px #ff8c00, 0 0 50px #ffa500; }
+.contact-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+  margin:50px 0;
 }
-
-/* Contact section */
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin: 50px 0;
+.contact-box{
+  background:rgba(0,0,0,0.4);
+  padding:25px;
+  border-radius:15px;
+  width:80%;
+  max-width:700px;
+  text-align:center;
+  animation:fireGlow 2s infinite alternate ease-in-out;
+  box-shadow:0 0 20px #ff4500,0 0 40px #ff8c00,0 0 60px #ffa500;
 }
-
-/* Glowing boxes */
-.contact-box {
-  background: rgba(0,0,0,0.4);
-  padding: 25px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  animation: fireGlow 2s infinite alternate ease-in-out;
-  box-shadow: 0 0 20px #ff4500, 0 0 40px #ff8c00, 0 0 60px #ffa500;
+.contact-box h3{
+  color:#ffae42;
+  text-shadow:0 0 8px #ffae42,0 0 15px #ffd700;
+  margin-bottom:10px;
 }
-.contact-box h3 {
-  color: #ffae42;
-  text-shadow: 0 0 8px #ffae42, 0 0 15px #ffd700;
-  margin-bottom: 10px;
+.contact-box a{
+  color:#ffae42;
+  text-decoration:none;
+  font-size:1.05rem;
 }
-.contact-box a {
-  color: #ffae42;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.contact-box a:hover { color: #ffd700; }
-
-/* Form */
+.contact-box a:hover{color:#ffd700;}
 .contact-box form input,
-.contact-box form textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: none;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  font-size: 1rem;
-  outline: none;
+.contact-box form textarea{
+  width:100%;
+  margin:10px 0;
+  padding:12px 14px;
+  border-radius:8px;
+  border:none;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  font-size:1rem;
+  outline:none;
 }
 .contact-box form input::placeholder,
-.contact-box form textarea::placeholder { color: #ddd; }
-.contact-box form button {
-  background: #ffae42;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: #fff;
-  font-size: 1rem;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: 0.3s;
+.contact-box form textarea::placeholder{color:#ddd;}
+.contact-box form button{
+  background:#ffae42;
+  border:none;
+  padding:10px 20px;
+  border-radius:25px;
+  color:#fff;
+  font-size:1rem;
+  margin-top:10px;
+  cursor:pointer;
+  transition:0.3s;
 }
-.contact-box form button:hover { background: #ff8c00; }
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0,31,63,0.9);
-  color: #ccc;
-  font-size: 0.9rem;
+.contact-box form button:hover{background:#ff8c00;}
+footer{
+  text-align:center;
+  padding:20px;
+  background:rgba(0,31,63,0.9);
+  color:#ccc;
+  font-size:.9rem;
 }
 </style>
 </head>
@@ -181,35 +160,32 @@ footer {
 
   <div class="contact-box">
     <h3>Office Location</h3>
-    <a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank">
-      ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
-    </a>
+    <p>
+      <a href="https://maps.app.goo.gl/NF2q84dFun1WzZd19" target="_blank">
+        ACHENAMBAL, ZAFFRON COLONY, PANTHACHOWK, SRINAGAR, J&K, INDIA
+      </a>
+    </p>
   </div>
 
   <div class="contact-box">
     <h3>Call Us</h3>
-    <a href="tel:+917006365752">+91 7006365752</a>
+    <p><a href="tel:+917006365752">+91 7006365752</a></p>
   </div>
 
   <div class="contact-box">
     <h3>Email Us</h3>
     <p>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@ansasolution.com&bcc=jansameer6861@gmail.com" target="_blank">
-        info@ansasolution.com
-      </a><br>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@ansasolution.com&bcc=jansameer6861@gmail.com" target="_blank">
-        careers@ansasolution.com
-      </a>
+      <a href="mailto:info@ansasolutions.com?cc=jansameer6861@gmail.com&subject=Inquiry%20to%20ANSA&body=Hello%20ANSA%20Team,">info@ansasolutions.com</a><br>
+      <a href="mailto:careers@ansasolutions.com?cc=jansameer6861@gmail.com&subject=Career%20Inquiry%20to%20ANSA&body=Hello%20ANSA%20HR%20Team,">careers@ansasolutions.com</a>
     </p>
   </div>
 
   <div class="contact-box">
     <h3>Send Us a Message</h3>
     <form id="contactForm" action="https://formspree.io/f/mnnoprbj" method="POST">
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="email" name="Email" placeholder="Your Email" required>
-      <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-      <input type="hidden" name="_redirect" value="https://sameerjan123.github.io/sameerjan123/thankyou.html">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </div>
@@ -219,6 +195,24 @@ footer {
 <footer>
   <p>&copy; 2025 ANSA SOFTWARE SOLUTIONS. All rights reserved.</p>
 </footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      window.location.href = "thankyou.html";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  }).catch(() => alert("Network error."));
+});
+</script>
 
 </body>
 </html>
